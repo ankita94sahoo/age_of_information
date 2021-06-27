@@ -6,7 +6,7 @@ s.bind(("localhost", 9995))
 
 s.listen(10)
 
-os.chdir("/Users/arnab/Downloads/SemProject/server_files")
+os.chdir("./server_files")
 
 while True:
     sc, address = s.accept()
