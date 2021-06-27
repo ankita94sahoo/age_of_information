@@ -30,7 +30,7 @@ good_packets = []
 bad_packets = []
 pack_no = 0
 delay = 0
-os.chdir("/Users/arnab/Downloads/SemProject/client_files")
+os.chdir("./client_files")
 
 while pack_no <= (total_packs - 1):
     if good == 1:
