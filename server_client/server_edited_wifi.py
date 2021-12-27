@@ -9,7 +9,7 @@ s.bind((HOST,PORT))
 
 s.listen(10)
 
-os.chdir("./server_files")
+os.chdir("./server_client/server_files")
 
 while True:
     sc, address = s.accept()
