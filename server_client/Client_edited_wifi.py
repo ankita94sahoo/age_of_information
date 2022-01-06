@@ -9,7 +9,7 @@ import os
 
 s = socket.socket()
 
-HOST='192.168.1.89'
+HOST='192.168.1.69'
 PORT=8665
 
 s.connect((HOST,PORT))
