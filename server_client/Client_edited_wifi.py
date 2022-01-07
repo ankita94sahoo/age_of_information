@@ -14,7 +14,7 @@ PORT=8665
 
 s.connect((HOST,PORT))
 
-os.chdir("./client_files")
+os.chdir("./server_client/client_files")
 
 for i in glob.glob("*.csv"):
 

@@ -4,7 +4,7 @@ import numpy as np
 
 #Load dataframe
 
-pjme = pd.read_csv('PJME_hourly.csv',
+pjme = pd.read_csv('./dataset/PJME_hourly.csv',
                    index_col=[0], parse_dates=[0])
 pjme["delay"] = ""
 
@@ -30,7 +30,7 @@ good_packets = []
 bad_packets = []
 pack_no = 0
 delay = 0
-os.chdir("./client_files")
+os.chdir("./server_client/client_files")
 
 while pack_no <= (total_packs - 1):
     if good == 1:
