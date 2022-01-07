@@ -36,8 +36,8 @@ while pack_no <= (total_packs - 1):
     if good == 1:
         print("good packet, processed")
         good_packets.append(str(pack_no))
-        pjme['delay'][pack_no] = delay
-        pjme.iloc[[pack_no]].to_csv("row" + str(pack_no) + "+.csv")
+        data['delay'][pack_no] = delay
+        data.iloc[[pack_no]].to_csv("row" + str(pack_no) + "+.csv")
         good = np.random.rand(1) > p
         pack_no = pack_no + 1
         print(pack_no)
