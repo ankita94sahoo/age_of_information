@@ -7,7 +7,7 @@ import numpy as np
 data = pd.read_csv('./dataset/coinbaseUSD_1-min_data_2014-12-01_to_2018-11-11.csv.zip',
                    index_col=[0], parse_dates=[0])
 data["delay"] = ""
-
+data= data.reset_index()
 print(os.getcwd())
 # ========================================================================
 #Implement Loss pattern using Gilber-Elliot Model
@@ -37,7 +37,7 @@ while pack_no <= (total_packs - 1):
     if good == 1:
         print("good packet, processed")
         good_packets.append(str(pack_no))
-        data['delay'][pack_no] = delay
+        data.loc[pack_no,'delay'] = delay
         data.iloc[[pack_no]].to_csv("row" + str(pack_no) + "+.csv")
         good = np.random.rand(1) > p
         pack_no = pack_no + 1
