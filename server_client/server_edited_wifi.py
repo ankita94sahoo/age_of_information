@@ -2,7 +2,7 @@ import socket
 import os
 
 HOST=''
-PORT=8666
+PORT=8669
 
 s = socket.socket()
 s.bind((HOST,PORT))

@@ -8,6 +8,7 @@ data = pd.read_csv('./dataset/coinbaseUSD_1-min_data_2014-12-01_to_2018-11-11.cs
                    index_col=[0], parse_dates=[0])
 data["delay"] = ""
 data= data.reset_index()
+print(len(data))
 print(os.getcwd())
 # ========================================================================
 #Implement Loss pattern using Gilber-Elliot Model
