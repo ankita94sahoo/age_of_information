@@ -33,17 +33,26 @@ pack_no = 0
 delay = 0
 
 os.chdir("./server_client/client_files")
-
+bh_df = pd.DataFrame(columns=data.columns)
+print(bh_df.head())
+bh_pack = 0
 while pack_no <= (total_packs - 1):
     if good == 1:
         print("good packet, processed")
         good_packets.append(str(pack_no))
         data.loc[pack_no,'delay'] = delay
-        data.iloc[[pack_no]].to_csv("row" + str(pack_no) + "+.csv")
+        #data.iloc[[pack_no]].to_csv("row" + str(pack_no) + "+.csv")
+        if bh_pack <= 20:
+            bh_df = bh_df.append(data.loc[[pack_no]])
+        elif bh_pack > 20:
+            bh_pack = 0
+            bh_df.to_csv("row_" + str(pack_no) + "_to_" + str(pack_no+10) + "_.csv")
+            bh_df = pd.DataFrame(columns=data.columns)
         good = np.random.rand(1) > p
         pack_no = pack_no + 1
         print(pack_no)
         delay = delay + 1
+        bh_pack = bh_pack + 1
         # i = i + 1
     else:
         bad_packets.append(str(pack_no))
