@@ -2,14 +2,14 @@ import socket
 import os
 
 HOST=''
-PORT=8669
+PORT=8671
 
 s = socket.socket()
 s.bind((HOST,PORT))
 
 s.listen(10)
 
-os.chdir("./server_client/server_files")
+os.chdir("./server_files")
 
 while True:
     sc, address = s.accept()
